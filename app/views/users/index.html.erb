@@ -1,1 +1,49 @@
 <p>this user index!!!</p>
+<table class="table table-bordered border-primary">
+<tr>
+<th style="background-color:#FFFFE0">Name</th>
+    <th style="background-color:#FFFFE0">Email</th>
+    <th style="background-color:#FFFFE0">Date_of_birth</th>
+    <th style="background-color:#FFFFE0">Joining_date</th>
+    <th style="background-color:#FFFFE0">Role</th>
+    <th style="background-color:#FFFFE0">Mob_no.</th>
+    <th style="background-color:#FFFFE0">Address</th>
+</tr>
+
+  <% @users.each do |user| %>
+  <tr>
+  <% if current_user.role == "admin" %>
+
+  <td>
+    <%= link_to user.name, user %>
+  </td>
+
+  <td>
+    <%= link_to user.email, user %>
+  </td>
+
+  <td>
+    <%= link_to user.date_of_birth, user %>
+  </td>
+
+  <td>
+    <%= link_to user.joining_date, user %>
+  </td>
+
+  <td>
+    <%= link_to user.role, user %>
+  </td>
+
+  <td>
+    <%= link_to user.mob_no, user %>
+  </td>
+
+  <td>
+    <%= link_to user.address, user %>
+  </td>
+
+  
+
+  <% end %>
+  <% end %>
+<table>

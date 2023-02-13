@@ -12,4 +12,5 @@ end
   root to: "users#index"
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :users
 end
