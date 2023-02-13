@@ -1,7 +1,7 @@
 <p>this user index!!!</p>
 <table class="table table-bordered border-primary">
 <tr>
-<th style="background-color:#FFFFE0">Name</th>
+    <th style="background-color:#FFFFE0">Name</th>
     <th style="background-color:#FFFFE0">Email</th>
     <th style="background-color:#FFFFE0">Date_of_birth</th>
     <th style="background-color:#FFFFE0">Joining_date</th>
@@ -15,7 +15,7 @@
   <% if current_user.role == "admin" %>
 
   <td>
-    <%= link_to user.name, user %>
+    <a><%= link_to user.name, user %></a>
   </td>
 
   <td>
@@ -41,8 +41,6 @@
   <td>
     <%= link_to user.address, user %>
   </td>
-
-  
 
   <% end %>
   <% end %>
