@@ -58,6 +58,7 @@ group :development do
   gem "web-console"
 
   gem 'devise'
+  gem 'devise-bootstrap-views', '~> 1.0'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
