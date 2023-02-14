@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    debugger
     @user = User.new(user_params)
-
+    @user.date_of_birth = @user.date_of_birth.to_date
     if @user.save
       redirect_to @user
     else
@@ -24,6 +25,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :name, :role, :address, :mob_no, :date_of_birth, :joining_date)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :role, :address, :mob_no, :date_of_birth, :joining_date)
   end
 end

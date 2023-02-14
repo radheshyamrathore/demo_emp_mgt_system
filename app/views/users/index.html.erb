@@ -1,7 +1,7 @@
-<p>this user index!!!</p>
+
 <table class="table table-bordered border-primary">
 <tr>
-    <th style="background-color:#FFFFE0">Name</th>
+    <th style="background-color:#FFFFE0">Full_name</th>
     <th style="background-color:#FFFFE0">Email</th>
     <th style="background-color:#FFFFE0">Date_of_birth</th>
     <th style="background-color:#FFFFE0">Joining_date</th>
@@ -12,10 +12,9 @@
 
   <% @users.each do |user| %>
   <tr>
-  <% if current_user.role == "admin" %>
-
+  <%# if current_user.role == 'admin' %>
   <td>
-    <a><%= link_to user.name, user %></a>
+    <%= user.full_name %>
   </td>
 
   <td>
@@ -23,7 +22,7 @@
   </td>
 
   <td>
-    <%= user.date_of_birth %>
+    <%= user.date_of_birth.try(:strftime,"%d/%B/%Y") %>
   </td>
 
   <td>
@@ -41,7 +40,7 @@
   <td>
     <%= user.address %>
   </td>
-
-  <% end %>
+  
+  </tr>
   <% end %>
 <table>
