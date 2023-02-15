@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <%= render "layouts/header" %>
     <title>EmpSystem</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -9,17 +10,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <%= javascript_importmap_tags %>
-    
-    <nav class="navbar navbar-dark bg-dark">
 
-  <p class="navbar-text float-right">
-  <% if user_signed_in? %>
-  <a>Logged in as <strong><%= current_user.email %></strong>.</a>
-    <%= link_to 'Edit profile', edit_user_registration_path, class:"btn btn-success" %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
-  <% end %>
-  </p>
-  </nav>
   </head>
 
   <body>
